@@ -1,0 +1,11 @@
+button.c:27:5:Is_button1_pressed	4	static
+button.c:36:5:Is_button2_pressed	4	static
+button.c:45:5:Is_button3_pressed	4	static
+button.c:54:5:Is_buttonPED_pressed	4	static
+button.c:64:5:Is_button1_long_pressed	4	static
+button.c:73:5:Is_button2_long_pressed	4	static
+button.c:82:5:Is_button3_long_pressed	4	static
+button.c:91:5:Is_buttonPED_long_pressed	4	static
+button.c:102:6:Sub_key_pressed	16	static
+button.c:108:6:Sub_long_pressed	16	static
+button.c:114:6:Button_undebounce	16	static
