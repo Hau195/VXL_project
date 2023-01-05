@@ -8,7 +8,7 @@
 
 int TCNT1 = 0;
 char str[50];
-uint32_t ADC_value = 0;
+
 UART_HandleTypeDef huart2;
 
 void auto_tracffic_run(){
@@ -50,6 +50,7 @@ void auto_tracffic_run(){
 			traffic_light(Reset);
 			duration_value = Red_duration + Yellow_duration;
 			Set_timer4(2);
+			Set_timer3(5);
 		}
 
 		if(Is_buttonPED_pressed() == 1){
@@ -72,7 +73,7 @@ void auto_tracffic_run(){
 
 		if(timer3_flag == 1){
 			Set_timer3(5);
-		HAL_UART_Transmit (& huart2 , ( void *) str , sprintf (str , "!7SEG=%d#\n", duration ), 1000) ;
+		HAL_UART_Transmit (&huart2 , ( void *) str , sprintf (str , "!7SEG=%d#\n", duration ), 1000) ;
 		}
 		break;
 	case Auto_change:
@@ -99,6 +100,7 @@ void auto_tracffic_run(){
 			traffic_light(Reset);
 			duration_value = Red_duration + Yellow_duration;
 			Set_timer4(2);
+			Set_timer3(5);
 		}
 
 		if(Is_buttonPED_pressed() == 1){
@@ -143,6 +145,7 @@ void auto_tracffic_run(){
 			traffic_light(Reset);
 			duration_value = Red_duration + Yellow_duration;
 			Set_timer4(2);
+			Set_timer3(5);
 		}
 
 		if(Is_buttonPED_pressed() == 1){
@@ -189,6 +192,7 @@ void auto_tracffic_run(){
 			traffic_light(Reset);
 			duration_value = Red_duration + Yellow_duration;
 			Set_timer4(2);
+			Set_timer3(5);
 		}
 
 		if(Is_buttonPED_pressed() == 1){

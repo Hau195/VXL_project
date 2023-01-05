@@ -5,8 +5,9 @@
  *      Author: HAU
  */
 #include "fsm_modify.h"
+char str[50];
 
-
+UART_HandleTypeDef huart2;
 void fsm_modify_run(){
 	switch(status){
 	case Normal:
@@ -47,7 +48,11 @@ void fsm_modify_run(){
 			if(Red_duration > 99) Red_duration = 0;
 			if(Red_duration < 0) Red_duration = 0;
 		}
-
+		duration_value = Red_duration + Yellow_duration;
+		if(timer3_flag == 1){
+			Set_timer3(5);
+		HAL_UART_Transmit (& huart2 , ( void *) str , sprintf (str , "!7SEG=%d#\n", duration_value ), 1000) ;
+		}
 		red_modify_update();
 
 		break;

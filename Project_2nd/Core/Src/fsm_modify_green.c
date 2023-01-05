@@ -5,7 +5,9 @@
  *      Author: HAU
  */
 #include "fsm_modify_green.h"
+char str[50];
 
+UART_HandleTypeDef huart2;
 void fsm_modify_green_run(){
 	switch(status){
 	case Green_Modify:
@@ -31,7 +33,10 @@ void fsm_modify_green_run(){
 			if(duration_value > 99) duration_value = 0;
 			if(duration_value < 0 ) duration_value = 99;
 		}
-
+		if(timer3_flag == 1){
+			Set_timer3(5);
+		HAL_UART_Transmit (& huart2 , ( void *) str , sprintf (str , "!7SEG=%d#\n", Green_duration ), 1000) ;
+		}
 		green_modify_update();
 
 		break;

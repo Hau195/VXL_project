@@ -21,7 +21,7 @@ void Pedestrian_run(){
 			ped_flag = 0;
 			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, RESET);
 			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
-			//__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 999);
+			__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
 		}
 
 		break;
@@ -32,7 +32,7 @@ void Pedestrian_run(){
 			ped_flag = 0;
 			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, RESET);
 			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
-			//__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 999);
+			__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
 		}
 		break;
 	case Auto_green:
@@ -42,7 +42,7 @@ void Pedestrian_run(){
 			ped_flag = 0;
 			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, RESET);
 			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
-			//__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 999);
+			__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
 		}
 		break;
 	case Auto_yellow:
@@ -52,7 +52,7 @@ void Pedestrian_run(){
 			ped_flag = 0;
 			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, RESET);
 			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
-			//__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 999);
+			__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
 		}
 		break;
 	}
